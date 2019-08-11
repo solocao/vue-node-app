@@ -4,7 +4,8 @@
   "description": "A node.js demo server testing sockets, routes, mongo and general architecture pattern",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build --prefix ../client/ && nodemon --exec babel-node app.js",
+    "init": "npm run build --prefix ../client/ && nodemon --exec babel-node app.js",
+    "start": "nodemon --exec babel-node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kabitakis Giorgos",
