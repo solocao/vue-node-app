@@ -55,10 +55,11 @@ export default {
       }
     },
     thingUpdate(data) {
+      
       this.items = this.items.map(element => {
         if (element._id === data._id) return data;
         else return element;
-      });
+      })
     },
     thingDelete(data) {
       let idx = this.items.findIndex(element => {
