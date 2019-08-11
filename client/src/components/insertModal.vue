@@ -34,7 +34,7 @@ export default {
     },
     save() {
       axios
-        .post("http://localhost:5000/api/thing", {
+        .post("/api/thing", {
           type: this.form.type,
           name: this.form.name,
           number: this.form.number,

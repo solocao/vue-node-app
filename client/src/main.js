@@ -8,6 +8,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import moment from 'moment'
 import Toasted from 'vue-toasted';
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSave, faTrashAlt, faTimes } from "@fortawesome/free-solid-svg-icons";
+
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+library.add(faSave);
+library.add(faTrashAlt);
+library.add(faTimes);
 
 Vue.filter('formatDate', function (value) {
   if (value) {
@@ -15,7 +24,7 @@ Vue.filter('formatDate', function (value) {
   }
 });
 
-const SocketInstance = socketio.connect('http://127.0.0.1:5000', {
+const SocketInstance = socketio.connect('', {
   path: '/socket.io-client',
   query: {
     token: 'myPrivateToken',

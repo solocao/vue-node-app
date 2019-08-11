@@ -47,13 +47,13 @@
       <transition name="bounce">
         <div class="col-6 ctrl-btns" v-if="editable">
           <b-button variant="primary" @click="cancelChanges()">
-            <i class="fa fa-times"></i>
+            <font-awesome-icon icon="times" fixed-width></font-awesome-icon>
           </b-button>
           <b-button variant="success" @click="updateItem(item._id)">
-            <i class="fa fa-save"></i>
+            <font-awesome-icon icon="save" fixed-width></font-awesome-icon>
           </b-button>
           <b-button variant="danger" @click="removeItem(item._id)">
-            <i class="fa fa-trash"></i>
+            <font-awesome-icon icon="trash-alt" fixed-width></font-awesome-icon>
           </b-button>
         </div>
       </transition>
@@ -90,7 +90,7 @@ export default {
   methods: {
     removeItem(itemId) {
       axios
-        .delete("http://localhost:5000/api/thing/" + itemId)
+        .delete("/api/thing/" + itemId)
         .then(() => {})
         .catch(err => {
           Vue.toasted.error(err);
@@ -101,7 +101,7 @@ export default {
       if (_.isEqual(this.backUpItem, this.item)) this.editable = false;
       else
         axios
-          .put("http://localhost:5000/api/thing/" + itemId, this.backUpItem)
+          .put("/api/thing/" + itemId, this.backUpItem)
           .then(() => {
             this.editable = false;
           })
@@ -157,10 +157,9 @@ export default {
   color: red;
 }
 
-.fa {
+svg {
   position: relative;
-  left: -3.5px;
-  top: -2px;
+  left: -7.5px;
 }
 
 textarea {
