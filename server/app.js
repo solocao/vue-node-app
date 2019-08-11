@@ -8,6 +8,7 @@ import socketSetup from './sockets/sockets.setup';
 import cors from 'cors';
 import socketsController from './sockets/sockets.controller';
 import pino from 'pino';
+import path from 'path';
 
 global.socketsController = socketsController;
 global.logger = pino({
@@ -17,6 +18,7 @@ global.logger = pino({
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({
