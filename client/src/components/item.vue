@@ -78,7 +78,7 @@ export default {
     };
   },
   watch: {
-    item: function(value, oldValue) {
+    item: function(value) {
       //Here handle the animation
       this.backUpItem = _.cloneDeep(value);
       this.isUpdated = true;

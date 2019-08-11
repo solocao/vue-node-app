@@ -1,5 +1,11 @@
 // vue.config.js
 module.exports = {
     // options...
-    publicPath: './'
+    publicPath: './',
+    configureWebpack: {
+        stats: 'errors-only',
+        performance: {
+            hints: false
+        }
+    }
 }

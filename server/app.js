@@ -9,6 +9,7 @@ import cors from 'cors';
 import socketsController from './sockets/sockets.controller';
 import pino from 'pino';
 import path from 'path';
+import opn from 'opn';
 
 global.socketsController = socketsController;
 global.logger = pino({
@@ -47,6 +48,9 @@ socketSetup(server)
 
 function startServer() {
     server.listen(config.port, () => {
+        if (config.serve_page)
+            opn('http://localhost:' + config.port);
+            
         global.logger.info(`Awesome server is listening to ${config.port}`);
     });
 };
