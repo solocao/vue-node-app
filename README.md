@@ -44,5 +44,6 @@ After finishing all the installations a page will pop up at your browser.If not 
 ![](vue-node-app.gif)
 ## Issues
 
-For any issues or any questions about the implemantation feel free to contact with me
-George Kabitakis ```gkabitakis@gmail.com ``` or [open an issue](https://github.com/KabitakisGiorgos/vue-node-app/issues/new)
+<p align="center">
+✌️ <a href="https://github.com/gkampitakis/vue-node-app/issues/new">For any questions or issues</a> ✌️
+</p>
